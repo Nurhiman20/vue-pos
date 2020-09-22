@@ -30,7 +30,7 @@ export default new Router({
         {
           path: '/transaksi',
           name: 'Transaksi',
-          redirect: '/member/penjualan',
+          redirect: '/transaksi/penjualan',
           component: TransaksiPage,
           children: [
             {
