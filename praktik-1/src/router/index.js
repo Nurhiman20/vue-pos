@@ -28,22 +28,22 @@ export default new Router({
           component: DashboardPage
         },
         {
-          path: '/transaksi',
-          name: 'Transaksi',
-          redirect: '/transaksi/penjualan',
-          component: TransaksiPage,
-          children: [
-            {
-              path: 'penjualan',
-              name: 'Penjualan',
-              component: TransaksiPenjualan
-            }
-          ]
-        },
-        {
           path: '/not-found',
           name: 'Under Construction',
           component: NotFoundPage
+        }
+      ]
+    },
+    {
+      path: '/transaksi',
+      name: 'Transaksi',
+      redirect: '/transaksi/penjualan',
+      component: HomeLayout,
+      children: [
+        {
+          path: 'penjualan',
+          name: 'Penjualan',
+          component: TransaksiPenjualan
         }
       ]
     }

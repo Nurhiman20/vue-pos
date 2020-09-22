@@ -1,9 +1,15 @@
 <template>
-  <div class="d-flex flex-column justify-center py-12">
-    <div class="d-flex flex-row justify-center">
-      <v-icon color="primary" size="100">mdi-wrench-outline</v-icon>
-      <v-icon color="primary" size="120">mdi-account-hard-hat</v-icon>
-    </div>
-    <p class="text-center app-title mt-3">Mohon maaf,<br>halaman ini sedang diperbaiki</p>
+  <div>
+    <under-constructions></under-constructions>
   </div>
 </template>
+
+<script>
+import underConstructions from '../components/UnderConstruction'
+
+export default {
+  components: {
+    underConstructions
+  }
+}
+</script>
