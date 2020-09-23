@@ -76,7 +76,6 @@ export default {
   props: ['drawer'],
   data () {
     return {
-      drawer: null,
       mini: false
     }
   },

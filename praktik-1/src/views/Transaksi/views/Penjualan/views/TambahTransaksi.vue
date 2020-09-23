@@ -10,38 +10,38 @@
 
           <!-- menu transaksi -->
           <div class="d-flex flex-row justify-space-between mt-1">
-            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer">
-              <v-avatar color="indigo" size="64" class="mx-auto mt-n12">
+            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer" :class="menuActive === 'Pre Order' ? 'box-title-2' : 'box-title'" @click="changeMenu('Pre Order')">
+              <v-avatar :color="menuActive === 'Pre Order' ? 'success' : 'indigo'" size="64" class="mx-auto mt-n12">
                 <v-icon dark>mdi-handshake-outline</v-icon>
               </v-avatar>
               <p class="mx-auto mt-2 mb-0">Pre Order</p>
             </div>
-            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer">
-              <v-avatar color="indigo" size="64" class="mx-auto mt-n12">
+            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer":class="menuActive === 'Dine In' ? 'box-title-2' : 'box-title'" @click="changeMenu('Dine In')">
+              <v-avatar :color="menuActive === 'Dine In' ? 'success' : 'indigo'" size="64" class="mx-auto mt-n12">
                 <v-icon dark>mdi-table-chair</v-icon>
               </v-avatar>
               <p class="mx-auto mt-2 mb-0">Dine In</p>
             </div>
-            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer">
-              <v-avatar color="indigo" size="64" class="mx-auto mt-n12">
+            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer":class="menuActive === 'Takeaway' ? 'box-title-2' : 'box-title'" @click="changeMenu('Takeaway')">
+              <v-avatar :color="menuActive === 'Takeaway' ? 'success' : 'indigo'" size="64" class="mx-auto mt-n12">
                 <v-icon dark>mdi-cart-arrow-up</v-icon>
               </v-avatar>
               <p class="mx-auto mt-2 mb-0">Takeaway</p>
             </div>
-            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer">
-              <v-avatar color="indigo" size="64" class="mx-auto mt-n12">
+            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer":class="menuActive === 'Delivery' ? 'box-title-2' : 'box-title'" @click="changeMenu('Delivery')">
+              <v-avatar :color="menuActive === 'Delivery' ? 'success' : 'indigo'" size="64" class="mx-auto mt-n12">
                 <v-icon dark>mdi-moped-outline</v-icon>
               </v-avatar>
               <p class="mx-auto mt-2 mb-0">Delivery</p>
             </div>
-            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer">
-              <v-avatar color="indigo" size="64" class="mx-auto mt-n12">
+            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer":class="menuActive === 'Ojek Online' ? 'box-title-2' : 'box-title'" @click="changeMenu('Ojek Online')">
+              <v-avatar :color="menuActive === 'Ojek Online' ? 'success' : 'indigo'" size="64" class="mx-auto mt-n12">
                 <v-icon dark>mdi-motorbike</v-icon>
               </v-avatar>
               <p class="mx-auto mt-2 mb-0">Ojek Online</p>
             </div>
-            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer">
-              <v-avatar color="indigo" size="64" class="mx-auto mt-n12">
+            <div class="d-flex flex-column justify-start box-title pa-3 pb-2 cursor-pointer":class="menuActive === 'Reservasi' ? 'box-title-2' : 'box-title'" @click="changeMenu('Reservasi')">
+              <v-avatar :color="menuActive === 'Reservasi' ? 'success' : 'indigo'" size="64" class="mx-auto mt-n12">
                 <v-icon dark>mdi-book-open-variant</v-icon>
               </v-avatar>
               <p class="mx-auto mt-2 mb-0">Reservasi</p>
@@ -102,7 +102,7 @@
                   tile
                   class="pa-4"
                 >
-                  <kategori-app :itemProduk="itemKategori1" :search="search"></kategori-app>
+                  <kategori-app :itemProduk="itemKategori1" :search="search" @selectItem="pushItem"></kategori-app>
                 </v-card>
               </v-tab-item>
 
@@ -114,7 +114,7 @@
                   tile
                   class="pa-4"
                 >
-                  <kategori-app :itemProduk="itemKategori2" :search="search"></kategori-app>
+                  <kategori-app :itemProduk="itemKategori2" :search="search" @selectItem="pushItem"></kategori-app>
                 </v-card>
               </v-tab-item>
 
@@ -126,7 +126,7 @@
                   tile
                   class="pa-4"
                 >
-                  <kategori-app :itemProduk="[]" :search="search"></kategori-app>
+                  <kategori-app :itemProduk="[]" :search="search" @selectItem="pushItem"></kategori-app>
                 </v-card>
               </v-tab-item>
 
@@ -138,7 +138,7 @@
                   tile
                   class="pa-4"
                 >
-                  <kategori-app :itemProduk="[]" :search="search"></kategori-app>
+                  <kategori-app :itemProduk="[]" :search="search" @selectItem="pushItem"></kategori-app>
                 </v-card>
               </v-tab-item>
 
@@ -150,7 +150,7 @@
                   tile
                   class="pa-4"
                 >
-                  <kategori-app :itemProduk="[]" :search="search"></kategori-app>
+                  <kategori-app :itemProduk="[]" :search="search" @selectItem="pushItem"></kategori-app>
                 </v-card>
               </v-tab-item>
             </v-tabs>
@@ -158,7 +158,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" md="5" lg="5">
-        <v-card outlined class="">
+        <v-card outlined class="pb-0">
           <v-row>
             <v-col cols="10" md="10" lg="10" class="pt-0">
               <div class="w-full d-flex box-title pt-2 pb-0">
@@ -178,6 +178,25 @@
                 </v-badge>
               </v-btn>
             </v-col>
+            <v-col cols="6" md="6" lg="6">
+              <div class="d-flex justify-center">
+                <v-btn text color="primary">
+                  <v-icon class="mr-2">mdi-ticket-confirmation-outline</v-icon>
+                  Nomor Meja
+                </v-btn>
+              </div>
+            </v-col>
+            <v-col cols="6" md="6" lg="6">
+              <div class="d-flex justify-center">
+                <v-btn text color="primary">
+                  <v-icon class="mr-2">mdi-account-circle</v-icon>
+                  Pilih Pelanggan
+                </v-btn>
+              </div>
+            </v-col>
+            <v-col cols="12" md="12" lg="12">
+              <selected-menu :menu="selectedItemMenu" @deleteOrder="deleteOrderList"></selected-menu>
+            </v-col>
           </v-row>
         </v-card>
       </v-col>
@@ -187,14 +206,17 @@
 
 <script>
 import kategoriApp from '../components/Kategori'
+import selectedMenu from '../components/SelectedMenu'
 
 export default {
   components: {
-    kategoriApp
+    kategoriApp,
+    selectedMenu
   },
   data() {
     return {
       notifications: 14,
+      menuActive: 'Dine In',
       tab: null,
       tabs: ['Kategori 1', 'Kategori 2', 'Kategori 3', 'Kategori 4', 'Kategori 5'],
       outlets: ['Cilok Pelakor', 'Odading Mang Oleh', 'Seblak Seuhah'],
@@ -206,28 +228,28 @@ export default {
           deskripsi: 'Cilok yang pakai kuah spesial',
           foto: 'https://s1.bukalapak.com/uploads/content_attachment/1d02de4707c1647d811a49b5/w-744/resep_cilok_goang_2.jpg',
           harga: 10000,
-          check: false
+          qty: 1
         },
         {
           nama: 'Cilok Kuah Spesial 2',
           deskripsi: 'Cilok yang pakai kuah spesial',
           foto: 'https://s1.bukalapak.com/uploads/content_attachment/1d02de4707c1647d811a49b5/w-744/resep_cilok_goang_2.jpg',
           harga: 12000,
-          check: false
+          qty: 1
         },
         {
           nama: 'Cilok Kuah Biasa',
           deskripsi: 'Cilok yang pakai kuah biasa',
           foto: 'https://s1.bukalapak.com/uploads/content_attachment/1d02de4707c1647d811a49b5/w-744/resep_cilok_goang_2.jpg',
           harga: 8000,
-          check: false
+          qty: 1
         },
         {
           nama: 'Cilok Kuah Biasa Banget',
           deskripsi: 'Cilok yang pakai kuah biasa banget',
           foto: 'https://s1.bukalapak.com/uploads/content_attachment/1d02de4707c1647d811a49b5/w-744/resep_cilok_goang_2.jpg',
           harga: 5000,
-          check: false
+          qty: 1
         }
       ],
       itemKategori2: [
@@ -236,32 +258,58 @@ export default {
           deskripsi: 'Air pakai teh, gula, es batu',
           foto: 'https://awsimages.detik.net.id/community/media/visual/2020/05/14/0af32d8b-36b7-4555-8e79-4fd54c98f795.jpeg?w=700&q=90',
           harga: 5000,
-          check: false
+          check: false,
+          qty: 1
         },
         {
           nama: 'Jasjus Mangga',
           deskripsi: 'Air pakai jasjus',
           foto: 'https://d1sag4ddilekf6.cloudfront.net/item/IDITE2020022713091426321/photos/menueditor_item_b842ca6544764df1857c7114d0c1d6cf_1582808872099842379.jpg',
           harga: 2000,
-          check: false
+          qty: 1
         },
         {
           nama: 'Air Putih',
           deskripsi: 'Untuk yang berhemat',
           foto: 'https://image-cdn.medkomtek.com/Q4a3dSLSLDRujQ_W6X5MLe09etc=/1200x675/smart/klikdokter-media-buckets/medias/1994866/original/062103000_1521023795-Mana-Lebih-Aman-Air-Mineral-Kemasan-atau-Air-Rebusan-By-Tendo-shutterstock.jpg',
           harga: 1000,
-          check: false
+          qty: 1
         }
-      ]
+      ],
+      selectedItemMenu: []
     }
-  }
+  },
+  methods: {
+    changeMenu(val) {
+      this.menuActive = val
+    },
+    pushItem(e) {
+      const found = this.selectedItemMenu.some(el => el.nama === e.nama);
+      if (!found) {
+        this.selectedItemMenu.push(e)
+      } else {
+        alert('Item sudah ditambahkan')
+      }
+    },
+    deleteOrderList(e) {
+      this.selectedItemMenu = e
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .box-title {
-  // background-color: #32297C;
   background-color: #DEE3EE;
+}
+
+.box-title-2 {
+  background-color: #b0edb4;
+}
+
+.box-total {
+  background-color: #3F51B5;
+  color: white;
 }
 
 .v-avatar {

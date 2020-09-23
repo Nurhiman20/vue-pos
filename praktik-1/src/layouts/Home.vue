@@ -2,7 +2,7 @@
   <v-app id="keep">
     <app-header @hide="hideDrawer" :drawer="drawer"></app-header>
     <app-sidebar :drawer="drawer"></app-sidebar>
-    <v-content class="app-content">
+    <v-main class="app-content">
       <div class="ml-0 mt-1">
         <v-breadcrumbs :items="breadcrumbItems">
           <template v-slot:item="{ item }">
@@ -18,7 +18,7 @@
       <div class="px-6 mb-10 mt-3">
         <router-view></router-view>
       </div>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
