@@ -91,7 +91,7 @@ export const mainMenu = [
     children: [
       {
         text: 'Penjualan',
-        to: '/transaksi/penjualan'
+        to: '/transaksi/penjualan/tambah-transaksi'
       },
       {
         text: 'Pengeluaran',

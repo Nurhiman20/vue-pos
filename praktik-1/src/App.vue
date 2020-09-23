@@ -12,7 +12,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-#app {
+*, body {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: normal;
