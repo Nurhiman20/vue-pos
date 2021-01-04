@@ -329,7 +329,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .app-content {
   min-height: 100vh;
 }
@@ -344,24 +344,22 @@ export default {
   color: white;
 }
 
-.dialog{
+.dialog {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.dialog .paragraph-3{
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 18px;
-}
-
-.dialog .paragraph-4{
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
+  .paragraph-3 {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 18px;
+  }
+  .paragraph-4 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+  }
 }
 </style>
