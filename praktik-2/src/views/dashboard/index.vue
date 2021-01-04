@@ -2,7 +2,7 @@
   <div class="app-content">
     <v-container>
       <v-row>
-        <v-col cols="12" md="7" lg="7">
+        <v-col cols="7" md="7" lg="7">
           <v-card
             outlined
             flat
@@ -25,7 +25,7 @@
             <div class="mt-2">
               <p v-if="resultSearch.length === 0">Mohon maaf.. Menu tersebut tidak tersedia</p>
               <v-row v-else>
-                <v-col cols="12" md="4" lg="4" v-for="(item, i) in resultSearch" :key="i">
+                <v-col cols="4" md="4" lg="4" v-for="(item, i) in resultSearch" :key="i">
                   <v-card class="cursor-pointer" @click="addMenu(item)">
                     <div class="d-flex flex-column">
                       <v-img src="https://picsum.photos/400/300?random" :aspect-ratio="4/3"></v-img>
@@ -40,7 +40,7 @@
             </div>
           </v-card>
         </v-col>
-        <v-col cols="12" md="5" lg="5">
+        <v-col cols="5" md="5" lg="5">
           <v-card
             outlined
             flat
@@ -68,10 +68,10 @@
             </div>
             <div class="w-full px-3 mt-4">
               <v-row>
-                <v-col cols="12" md="6" lg="6" class="py-0">
+                <v-col cols="6" md="6" lg="6" class="py-0">
                   Diskon
                 </v-col>
-                <v-col cols="12" md="6" lg="6" class="py-0">
+                <v-col cols="6" md="6" lg="6" class="py-0">
                   <div class="d-flex flex-row justify-end">
                     <p class="text-bold">Rp. 0</p>
                   </div>
