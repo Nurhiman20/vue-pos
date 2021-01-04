@@ -9,12 +9,12 @@
             class="pa-4"
             min-height="90vh"
           >
-            <v-btn color="#ffde26" dark :outlined="activeView === 'minuman' ? false : true"  @click="changeView('minuman')">Minuman</v-btn>
-            <v-btn color="#ffde26" dark class="ml-1" :outlined="activeView === 'makanan' ? false : true" @click="changeView('makanan')">Makanan</v-btn>
-            <v-btn color="#ffde26" dark class="ml-1" :outlined="activeView === 'coffee' ? false : true" @click="changeView('coffee')">Coffee</v-btn>
-            <v-btn color="#ffde26" dark class="ml-1" :outlined="activeView === 'jus' ? false : true" @click="changeView('jus')">Jus</v-btn>
-            <v-btn color="#ffde26" dark class="ml-1" :outlined="activeView === 'ayam' ? false : true" @click="changeView('ayam')">Ayam</v-btn>
-            <v-btn color="#ffde26" dark class="ml-1" :outlined="activeView === 'dessert' ? false : true" @click="changeView('dessert')">Dessert</v-btn>
+            <v-btn color="#2B81D6" dark :outlined="activeView === 'minuman' ? false : true"  @click="changeView('minuman')">Minuman</v-btn>
+            <v-btn color="#2B81D6" dark class="ml-1" :outlined="activeView === 'makanan' ? false : true" @click="changeView('makanan')">Makanan</v-btn>
+            <v-btn color="#2B81D6" dark class="ml-1" :outlined="activeView === 'coffee' ? false : true" @click="changeView('coffee')">Coffee</v-btn>
+            <v-btn color="#2B81D6" dark class="ml-1" :outlined="activeView === 'jus' ? false : true" @click="changeView('jus')">Jus</v-btn>
+            <v-btn color="#2B81D6" dark class="ml-1" :outlined="activeView === 'ayam' ? false : true" @click="changeView('ayam')">Ayam</v-btn>
+            <v-btn color="#2B81D6" dark class="ml-1" :outlined="activeView === 'dessert' ? false : true" @click="changeView('dessert')">Dessert</v-btn>
             <v-text-field
               v-model="search"
               outlined
@@ -26,10 +26,13 @@
               <p v-if="resultSearch.length === 0">Mohon maaf.. Menu tersebut tidak tersedia</p>
               <v-row v-else>
                 <v-col cols="12" md="4" lg="4" v-for="(item, i) in resultSearch" :key="i">
-                  <v-card flat outlined class="pa-4 cursor-pointer" color="#6AE06A" dark @click="addMenu(item)">
-                    <div class="d-flex flex-column text-center">
-                      <p class="my-auto">{{ item.nama }}</p>
-                      <p>{{ item.harga }}</p>
+                  <v-card class="cursor-pointer" @click="addMenu(item)">
+                    <div class="d-flex flex-column">
+                      <v-img src="https://picsum.photos/400/300?random" :aspect-ratio="4/3"></v-img>
+                      <div class="ml-4 mt-3">
+                        <p>{{ item.nama }}</p>
+                        <p class="mt-n3 text-bold">Rp. {{ item.harga }}</p>
+                      </div>
                     </div>
                   </v-card>
                 </v-col>
@@ -66,28 +69,6 @@
             <div class="w-full px-3 mt-4">
               <v-row>
                 <v-col cols="12" md="6" lg="6" class="py-0">
-                  Nomor Meja
-                </v-col>
-                <v-col cols="12" md="6" lg="6" class="py-0">
-                  <v-text-field
-                    v-model="nomorMeja"
-                    outlined
-                    dense
-                    class="mb-0"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12" md="6" lg="6" class="py-0">
-                  Potongan Harga
-                </v-col>
-                <v-col cols="12" md="6" lg="6" class="py-0">
-                  <v-text-field
-                    v-model="potonganHarga"
-                    outlined
-                    dense
-                    class="mb-0"
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12" md="6" lg="6" class="py-0">
                   Diskon
                 </v-col>
                 <v-col cols="12" md="6" lg="6" class="py-0">
@@ -119,7 +100,7 @@
                   </div>
                 </v-col>
                 <v-col cols="12" md="12" lg="12" class="py-0">
-                  <v-btn class="mt-3" block color="green" dark @click="submitTransaksi">Transaksi</v-btn>
+                  <v-btn class="mt-3" block color="primary" dark @click="submitTransaksi">Transaksi</v-btn>
                 </v-col>
               </v-row>
             </div>
@@ -354,12 +335,12 @@ export default {
 }
 
 .total {
-  background-color: #FF4F4F;
+  background-color: #2B81D6;
   color: white;
 }
 
 .kembali {
-  background-color:#1240AA;
+  background-color:#FF4F4F;
   color: white;
 }
 

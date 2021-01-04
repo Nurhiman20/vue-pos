@@ -7,13 +7,13 @@
 }
 
 .table .theme--light.v-data-table thead tr:last-child th{
-  background-color:#ffde26;
+  background-color: #2B81D6;
 }
 
 .table .theme--light.v-data-table thead tr th {
   font-size: 14px;
   line-height: 20px;
-  color: #ffde26
+  color: #2B81D6;
 }
 
 .table .v-application .elevation-1 {
@@ -21,8 +21,8 @@
 }
 
 .table .v-application .primary--text{
-  color: #C5870E !important;
-  caret-color: #C5870E !important;
+  color: #105ca9 !important;
+  caret-color: #105ca9 !important;
 }
 
 .w-full {
