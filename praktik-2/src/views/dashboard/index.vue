@@ -51,7 +51,7 @@
               <v-data-table
                 :headers="headers"
                 :items="selectedMenu"
-                class="elevation-1"
+                class="elevation-1 scrollbar-custom"
                 hide-default-footer
               >
                 <template v-slot:item.actions="{item}">
@@ -204,6 +204,13 @@ export default {
           qty: 1,
           diskon: 0,
           total: 5000
+        },
+        {
+          nama: 'Teh Manis Panas',
+          harga: 4000,
+          qty: 1,
+          diskon: 0,
+          total: 5000
         }
       ],
       makanan: [
@@ -227,7 +234,7 @@ export default {
       ayam: [],
       dessert: [],
       headers: [
-        { text: 'Products', value: 'nama', sortable: false },        
+        { text: 'Produk', value: 'nama', sortable: false },        
         { text: 'Harga', value: 'harga', sortable: false },
         { text: 'Qty', value: 'qty', sortable: false },
         { text: 'Diskon', value: 'diskon', sortable: false },

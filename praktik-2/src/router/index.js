@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import HomeLayout from '@/layouts/Home'
 import dashboardApp from '@/views/dashboard'
 import VueRouter from 'vue-router'
 
@@ -12,7 +13,15 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'Dashboard',
-      component: dashboardApp
+      redirect: '/dashboard',
+      component: HomeLayout,
+      children: [
+        {
+          path: '/dashboard',
+          name: 'Dashboard',
+          component: dashboardApp
+        }
+      ]
     }
   ]
 })
