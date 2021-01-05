@@ -1,4 +1,4 @@
-# praktik-2
+# Vue POS App
 
 > A Vue.js project
 
